@@ -67,7 +67,7 @@ Python2.7.15+ 或 Python3.5+
     3.passwordFromFilePathName和passwordFromEnvVariable
       passwordFromFilePathName:client key密码配置从文件中获取，与passwordFromEnvVariable二选一
       例:当配置"passwordFromFilePathName":"client_key_password_from_file_path"时，
-        需在环境变量中添加client_key_password_from_file_path=<你的client key密码文件所在的绝对路径>，
+        需在配置文件中添加属性client_key_password_from_file_path=<你的client key密码文件所在的绝对路径>，
         以及对应写有password的文件。
       passwordFromEnvVariable:client key密码配置从环境变量中获取，与passwordFromFilePathName二选一
       例:当配置"passwordFromEnvVariable":"client_key_password_from_env_variable"时，
