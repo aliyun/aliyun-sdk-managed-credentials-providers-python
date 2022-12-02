@@ -1,4 +1,6 @@
 # coding=utf-8
+from aliyun_sdk_secretsmanager_common_plugin.aliyun_sdk_secretsmanager_plugins_manager import \
+    AliyunSdkSecretsManagerPluginsManager
 from oss2 import Bucket
 import oss2
 from aliyun_sdk_secretsmanager_oss_plugin.oss_ak_expire_handler import OssAkExpireHandler
@@ -33,6 +35,7 @@ class ProxyBucket(Bucket):
             return super(ProxyBucket, self)._do(method, bucket_name, key, **kwargs)
         except oss2.exceptions.ServerError as e:
             if self._ak_expire_handler.judge_ak_expire(e):
+                AliyunSdkSecretsManagerPluginsManager.refresh_secret_info(self._secret_name)
                 return super(ProxyBucket, self)._do(method, bucket_name, key, **kwargs)
             else:
                 raise e

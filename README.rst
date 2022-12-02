@@ -175,13 +175,13 @@ Providers:
     2.ignoreSslCerts:If ignore ssl certs (true: Ignores the ssl certificate, false: Validates the ssl certificate)
     3.passwordFromFilePathName and passwordFromEnvVariable
       passwordFromFilePathName:The client key password configuration is obtained from the file,choose one of the two with passwordFromEnvVariable.
-      for instance:When configuring "passwordFromFilePathName": "client_key_password_from_file_path",
-                   You need to add client_key_password_from_file_path=< your password file absolute path > in env.
-                   and correspond to a file with a password written on it.
+      e.g.  Where configuring "passwordFromFilePathName": "client_key_password_from_file_path",
+            You need to add properties client_key_password_from_file_path=< your password file absolute path >  in the configuration file.
+            and correspond to a file with a password written on it.
       passwordFromEnvVariable:The client key password configuration is obtained from the environment variable,choose one of the two with passwordFromFilePathName.
-      for instance:When configuring "passwordFromEnvVariable": "client_key_password_from_env_variable",
-                   You need to add client_key_password_from_env_variable=< your client key private key password from environment variable > in env
-                   and the corresponding env variable (xxx_env_variable=<your password>).
+      e.g.  Where configuring "passwordFromEnvVariable": "client_key_password_from_env_variable",
+            You need to add client_key_password_from_env_variable=< your client key private key password from environment variable > in env
+            and the corresponding env variable (xxx_env_variable=<your password>).
     4.clientKeyFile:The absolute path to the client key json file
     5.regionId:Region id
     6.endpoint:Domain address of dkms
