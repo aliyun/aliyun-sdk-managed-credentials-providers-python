@@ -69,26 +69,25 @@ Step 1: Configure the credentials provider
 running directory) to initialize the Aliyun SDK Managed Credentials
 Providers:
 
--  Access aliyun dedicated kms, you must set the following system
-   environment variables (for linux):
-   ``properties     cache_client_dkms_config_info=[{"ignoreSslCerts":false,"passwordFromFilePathName":"client_key_password_from_file_path","clientKeyFile":"\<your client key file absolute path>","regionId":"\<your dkms region>","endpoint":"\<your dkms endpoint>"}]``
-   ``text
-    The details of the configuration item named cache_client_dkms_config_info:
-    1.The cache_client_dkms_config_info configuration item is an array, you can configure multiple region instances
-    2.ignoreSslCerts:If ignore ssl certs (true: Ignores the ssl certificate, false: Validates the ssl certificate)
-    3.passwordFromFilePathName and passwordFromEnvVariable
-      passwordFromFilePathName:The client key password configuration is obtained from the file,choose one of the two with passwordFromEnvVariable.
-      e.g.  Where configuring "passwordFromFilePathName": "client_key_password_from_file_path",
-            You need to add properties client_key_password_from_file_path=< your password file absolute path >  in the configuration file.
-            and correspond to a file with a password written on it.
-      passwordFromEnvVariable:The client key password configuration is obtained from the environment variable,choose one of the two with passwordFromFilePathName.
-      e.g.  Where configuring "passwordFromEnvVariable": "client_key_password_from_env_variable",
-            You need to add client_key_password_from_env_variable=< your client key private key password from environment variable > in env
-            and the corresponding env variable (xxx_env_variable=<your password>).
-    4.clientKeyFile:The absolute path to the client key json file
-    5.regionId:Region id
-    6.endpoint:Domain address of dkms
-    ``
+.. code:: properties
+
+    cache_client_dkms_config_info=[{"regionId":"<your dkms region>","endpoint":"<your dkms endpoint>","passwordFromFilePath":"< your password file path >","clientKeyFile":"<your client key file path>","ignoreSslCerts":false,"caFilePath":"<your CA certificate file path>"}]
+
+::
+
+       The details of the configuration item named cache_client_dkms_config_info:
+       1. The configuration item named cache_client_dkms_config_info must be configured as a json array, you can configure multiple region instances
+       2. regionId:Region id
+       3. endpoint:Domain address of dkms
+       4. passwordFromFilePath and passwordFromEnvVariable
+         passwordFromFilePath:The client key password configuration is obtained from the file,choose one of the two with passwordFromEnvVariable.
+         e.g. while configuring passwordFromFilePath: < your password file path >, you need to configure a file with password written under the configured path
+         passwordFromEnvVariable:The client key password configuration is obtained from the environment variable,choose one of the two with passwordFromFilePath.
+         e.g. while configuring passwordFromEnvVariable: "your_password_env_variable",
+              You need to add your_password_env_variable=< your client key private key password > in env.
+       5. clientKeyFile:The path to the client key json file
+       6. ignoreSslCerts:If ignore ssl certs (true: Ignores the ssl certificate, false: Validates the ssl certificate)
+       7. caFilePath:The path of the CA certificate of the dkms
 
 Step 2: Use the credentials provider in Aliyun OSS SDK
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
