@@ -18,14 +18,14 @@ setup(
     name="aliyun-oss-python-sdk-managed-credentials-provider",
     packages=find_packages("src"),
     package_dir={"": "src"},
-    version="0.0.6",
+    version="0.1.0",
     license="Apache License 2.0",
     author="Aliyun",
     maintainer="Aliyun",
     description="Managed Credentials Provider for Aliyun Python SDK OSS",
     keywords=["aliyun", "kms", "oss2"],
     install_requires=[
-        'aliyun-sdk-common-managed-credentials-provider>=0.0.6',
+        'aliyun-sdk-common-managed-credentials-provider>=0.1.0',
         'oss2>=2.7.0'
     ],
     classifiers=[

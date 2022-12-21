@@ -83,33 +83,33 @@ Key调用某些云服务API返回的错误代码和上述所列错误码相异�
 | 里云SDK名称 | 模块名称    |             |             | en(groupId: |
 |             |             |             |             | artifactId) |
 +=============+=============+=============+=============+=============+
-| 阿里云SDK   | aliyun-pyth | >=2.13.30   | `阿         | aliyun-     |
-|             | on-sdk-core |             | 里云Python  | python-sdk- |
-|             |             |             | SDK托管     | core-manage |
-|             |             |             | 凭据插件 <h | d-credentia |
-|             |             |             | ttps://gith | ls-provider |
-|             |             |             | ub.com/aliy |             |
-|             |             |             | un/aliyun-s |             |
-|             |             |             | dk-managed- |             |
-|             |             |             | credentials |             |
-|             |             |             | -providers- |             |
-|             |             |             | python/tree |             |
-|             |             |             | /master/ali |             |
-|             |             |             | yun-sdk-man |             |
-|             |             |             | aged-creden |             |
-|             |             |             | tials-provi |             |
-|             |             |             | ders/aliyun |             |
-|             |             |             | -openapi-py |             |
-|             |             |             | thon-sdk-ma |             |
-|             |             |             | naged-crede |             |
-|             |             |             | ntials-prov |             |
-|             |             |             | ider>`__    |             |
+| 阿里云SDK   | aliyun-pyth | >=2.13.30   | `阿         | aliyun-ope  |
+|             | on-sdk-core |             | 里云Python  | napi-python |
+|             |             |             | SDK托       | -sdk-manage |
+|             |             |             | 管凭据插件  | d-credentia |
+|             |             |             |  <https://g | ls-provider |
+|             |             |             | ithub.com/a |             |
+|             |             |             | liyun/aliyu |             |
+|             |             |             | n-sdk-manag |             |
+|             |             |             | ed-credenti |             |
+|             |             |             | als-provide |             |
+|             |             |             | rs-python/t |             |
+|             |             |             | ree/master/ |             |
+|             |             |             | aliyun-sdk- |             |
+|             |             |             | managed-cre |             |
+|             |             |             | dentials-pr |             |
+|             |             |             | oviders/ali |             |
+|             |             |             | yun-openapi |             |
+|             |             |             | -python-sdk |             |
+|             |             |             | -managed-cr |             |
+|             |             |             | edentials-p |             |
+|             |             |             | rovider>`__ |             |
 +-------------+-------------+-------------+-------------+-------------+
-| OSS Python  | oss2        | >=2.7.0     | `OSS Python | aliyun-sdk  |
-| SDK         |             |             | SDK托管凭据 | -oss-manage |
-|             |             |             | 插件 <https | d-credentia |
-|             |             |             | ://github.c | ls-provider |
-|             |             |             | om/aliyun/a |             |
+| OSS Python  | oss2        | >=2.7.0     | `OSS Python | aliyun      |
+| SDK         |             |             | SDK托管凭据 | -oss-python |
+|             |             |             | 插件 <https | -sdk-manage |
+|             |             |             | ://github.c | d-credentia |
+|             |             |             | om/aliyun/a | ls-provider |
 |             |             |             | liyun-sdk-m |             |
 |             |             |             | anaged-cred |             |
 |             |             |             | entials-pro |             |
@@ -134,24 +134,25 @@ Key调用某些云服务API返回的错误代码和上述所列错误码相异�
 
 ``managed_credentials_providers.properties``\ (在程序运行目录下)初始化阿里云凭据管家动态RAM凭据客户端：
 
--  访问DKMS，你必须要设置如下系统环境变量 (linux):
-   ``properties     cache_client_dkms_config_info=[{"ignoreSslCerts":false,"passwordFromFilePathName":"client_key_password_from_file_path","clientKeyFile":"\<your client key file absolute path>","regionId":"\<your dkms region>","endpoint":"\<your dkms endpoint>"}]``
-    cache_client_dkms_config_info配置项解释:
-    1.cache_client_dkms_config_info配置项为数组，支持配置多个region实例
-    2.ignoreSslCerts:是否忽略ssl证书 (true:忽略ssl证书,false:验证ssl证书)
-    3.passwordFromFilePathName和passwordFromEnvVariable
-      passwordFromFilePathName:client key密码配置从文件中获取，与passwordFromEnvVariable二选一
-      例:当配置"passwordFromFilePathName":"client_key_password_from_file_path"时，
-        需在配置文件中添加属性client_key_password_from_file_path=<你的client key密码文件所在的绝对路径>，
-        以及对应写有password的文件。
-      passwordFromEnvVariable:client key密码配置从环境变量中获取，与passwordFromFilePathName二选一
-      例:当配置"passwordFromEnvVariable":"client_key_password_from_env_variable"时，
-        需在环境变量中添加client_key_password_from_env_variable=<你的client key密码对应的环境变量名>
-        以及对应的环境变量(xxx_env_variable=<your password>)。
-    4.clientKeyFile:client key json文件的绝对路径
-    5.regionId:地域Id
-    6.endpoint:专属kms的域名地址
-    ``
+.. code:: properties
+
+    cache_client_dkms_config_info=[{"regionId":"<your dkms region>","endpoint":"<your dkms endpoint>","passwordFromFilePath":"< your password file path >","clientKeyFile":"<your client key file path>","ignoreSslCerts":false,"caFilePath":"<your CA certificate file path>"}]
+
+::
+
+       cache_client_dkms_config_info配置项说明:
+       1. cache_client_dkms_config_info配置项为json数组，支持配置多个region实例
+       2. regionId:地域Id
+       3. endpoint:专属kms的域名地址
+       4. passwordFromFilePath和passwordFromEnvVariable
+          passwordFromFilePath:client key密码配置从文件中获取，与passwordFromEnvVariable二选一
+          例:当配置passwordFromFilePath:<你的client key密码文件所在的路径>,需在配置的绝对路径下配置写有password的文件
+          passwordFromEnvVariable:client key密码配置从环境变量中获取，与passwordFromFilePath二选一
+          例:当配置"passwordFromEnvVariable":"your_password_env_variable"时，
+            需在环境变量中添加your_password_env_variable=<你的client key对应的密码>
+       5. clientKeyFile:client key json文件的路径
+       6. ignoreSslCerts:是否忽略ssl证书 (true:忽略ssl证书,false:验证ssl证书)
+       7. caFilePath:专属kms的CA证书路径
 
 步骤 2：使用托管凭据插件访问云服务
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
