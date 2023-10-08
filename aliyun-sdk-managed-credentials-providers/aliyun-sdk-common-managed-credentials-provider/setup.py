@@ -18,7 +18,7 @@ setup(
     name="aliyun-sdk-common-managed-credentials-provider",
     packages=find_packages("src"),
     package_dir={"": "src"},
-    version="0.1.0",
+    version="0.1.1",
     license="Apache License 2.0",
     author="Aliyun",
     maintainer="Aliyun",

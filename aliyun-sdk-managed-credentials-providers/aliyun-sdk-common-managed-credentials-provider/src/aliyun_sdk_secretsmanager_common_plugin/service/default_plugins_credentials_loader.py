@@ -14,6 +14,7 @@ from aliyun_sdk_secretsmanager_common_plugin.service.rotate_ak_secret_refresh_se
 from aliyun_sdk_secretsmanager_common_plugin.service.secret_exchange import SecretExchange
 from aliyun_sdk_secretsmanager_common_plugin.service.secret_recovery_strategy import SecretRecoveryStrategy
 from aliyun_sdk_secretsmanager_common_plugin.utils import consts
+from aliyun_sdk_secretsmanager_common_plugin.utils.config_loader import ConfigLoader
 
 if sys.version_info.major == 2:
     from Queue import Queue
@@ -27,8 +28,10 @@ from alibaba_cloud_secretsmanager_client.utils import credentials_properties_uti
 class DefaultPluginCredentialsLoader(SecretsManagerPluginCredentialsLoader):
 
     def load(self):
-        credential_properties = credentials_properties_utils.load_credentials_properties(
-            consts.DEFAULT_CREDENTIALS_CONFIG_NAME)
+        config_name = ConfigLoader.get_config_name()
+        if config_name is None:
+            config_name = consts.DEFAULT_CREDENTIALS_CONFIG_NAME
+        credential_properties = credentials_properties_utils.load_credentials_properties(config_name)
         if credential_properties is not None:
             monitor_period_milliseconds = credential_properties.source_properties.get(
                 consts.PROPERTIES_MONITOR_PERIOD_MILLISECONDS_KEY)
