@@ -86,11 +86,14 @@ Python2.7.15+ 或 Python3.5+
 .. code:: python
 
    from aliyun_sdk_secretsmanager_oss_plugin.proxy_bucket import ProxyBucket
+   from aliyun_sdk_secretsmanager_common_plugin.utils.config_loader import ConfigLoader
    from itertools import islice
 
    endpoint = "******"
    secret_name ="******"
    bucket_name = "******"
+   //自定义配置文件
+   //ConfigLoader.set_config_name("custom-config")
    bucket = ProxyBucket(secret_name=secret_name, endpoint=endpoint, bucket_name=bucket_name)
    objects = bucket.list_objects()
    for b in islice(objects.object_list, 10):
@@ -149,11 +152,15 @@ Python2.7.15+ 或 Python3.5+
 
 
    from aliyun_sdk_secretsmanager_oss_plugin.proxy_bucket import ProxyBucket
+   from aliyun_sdk_secretsmanager_common_plugin.utils.config_loader import ConfigLoader
+
    from itertools import islice
 
    endpoint = "******"
    secret_name ="******"
    bucket_name = "******"
+   //自定义配置文件
+   //ConfigLoader.set_config_name("custom-config")
    bucket = ProxyBucket(secret_name=secret_name, endpoint=endpoint, bucket_name=bucket_name,ak_expire_handler=OssAkExpireHandler())
    objects = bucket.list_objects()
    for b in islice(objects.object_list, 10):
