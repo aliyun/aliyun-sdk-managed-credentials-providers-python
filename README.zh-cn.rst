@@ -162,10 +162,11 @@ Key调用某些云服务API返回的错误代码和上述所列错误码相异�
 .. code:: python
 
    from aliyun_sdk_secretsmanager_sdk_core_plugin.proxy_acs_client import ProxyAcsClient
-
+   from aliyun_sdk_secretsmanager_common_plugin.utils.config_loader import ConfigLoader
    region="cn-hangzhou"
    secretName="******"
-
+   //自定义配置文件
+   //ConfigLoader.set_config_name("custom-config")
    # 获取ACSClient
    client = ProxyAcsClient(region_id=region, secret_name=secretName )
 
@@ -198,7 +199,6 @@ Key调用某些云服务API返回的错误代码和上述所列错误码相异�
 .. code:: python
 
    from aliyun_sdk_secretsmanager_common_plugin.ak_expire_handler import AKExpireHandler
-
    AK_EXPIRE_ERROR_CODE = "InvalidAccessKeyId.NotFound"
 
 
@@ -223,10 +223,12 @@ Key调用某些云服务API返回的错误代码和上述所列错误码相异�
 
 
    from aliyun_sdk_secretsmanager_sdk_core_plugin.proxy_acs_client import ProxyAcsClient
+   from aliyun_sdk_secretsmanager_common_plugin.utils.config_loader import ConfigLoader
 
    region = "cn-hangzhou"
    secretName = "******"
-
+   //自定义配置文件
+   //ConfigLoader.set_config_name("custom-config")
    # 获取ACSClient
    client = ProxyAcsClient(region_id=region, secret_name=secretName,
                          ak_expire_handler=AliyunSdkAKExpireHandler("InvalidAccessKeyId.NotFound"))

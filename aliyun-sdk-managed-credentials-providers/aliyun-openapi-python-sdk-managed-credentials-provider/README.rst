@@ -112,10 +112,12 @@ RAM credentials。
 .. code:: python
 
    from aliyun_sdk_secretsmanager_sdk_core_plugin.proxy_acs_client import ProxyAcsClient
+   from aliyun_sdk_secretsmanager_common_plugin.utils.config_loader import ConfigLoader
 
    region="cn-hangzhou"
    secretName="******"
-
+   //custom configuration
+   //ConfigLoader.set_config_name("custom-config")
    # get an ACSClient
    client = ProxyAcsClient(region_id=region, secret_name=secretName )
 
@@ -176,10 +178,12 @@ use it to call aliyun services.
 
 
    from aliyun_sdk_secretsmanager_sdk_core_plugin.proxy_acs_client import ProxyAcsClient
+   from aliyun_sdk_secretsmanager_common_plugin.utils.config_loader import ConfigLoader
 
    region = "cn-hangzhou"
    secretName = "******"
-
+   //custom configuration
+   //ConfigLoader.set_config_name("custom-config")
    # get an ACSClient
    # provide the given error codes to obtain the credentials again
    client = ProxyAcsClient(region_id=region, secret_name=secretName,

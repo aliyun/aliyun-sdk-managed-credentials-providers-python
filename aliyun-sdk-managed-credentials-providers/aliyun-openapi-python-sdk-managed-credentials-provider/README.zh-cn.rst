@@ -92,10 +92,12 @@ Python2.7.15+ 或 Python3.5+
 .. code:: python
 
    from aliyun_sdk_secretsmanager_sdk_core_plugin.proxy_acs_client import ProxyAcsClient
+   from aliyun_sdk_secretsmanager_common_plugin.utils.config_loader import ConfigLoader
 
    region="cn-hangzhou"
    secretName="******"
-
+   //自定义配置文件
+   //ConfigLoader.set_config_name("custom-config")
    # 获取ACSClient
    client = ProxyAcsClient(region_id=region, secret_name=secretName )
 
@@ -152,10 +154,12 @@ Python2.7.15+ 或 Python3.5+
 
 
    from aliyun_sdk_secretsmanager_sdk_core_plugin.proxy_acs_client import ProxyAcsClient
+   from aliyun_sdk_secretsmanager_common_plugin.utils.config_loader import ConfigLoader
 
    region = "cn-hangzhou"
    secretName = "******"
-
+   //自定义配置文件
+   //ConfigLoader.set_config_name("custom-config")
    # 获取ACSClient
    client = ProxyAcsClient(region_id=region, secret_name=secretName,
                          ak_expire_handler=AliyunSdkAKExpireHandler("InvalidAccessKeyId.NotFound"))
