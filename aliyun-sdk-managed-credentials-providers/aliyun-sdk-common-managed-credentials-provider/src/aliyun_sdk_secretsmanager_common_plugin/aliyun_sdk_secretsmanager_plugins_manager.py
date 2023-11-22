@@ -9,11 +9,14 @@ from alibaba_cloud_secretsmanager_client.secret_manager_cache_client_builder imp
     SecretManagerCacheClientBuilder
 from alibaba_cloud_secretsmanager_client.service.default_secret_manager_client_builder import \
     DefaultSecretManagerClientBuilder
+from alibaba_cloud_secretsmanager_client.service.user_agent_manager import register_user_agent
 from alibaba_cloud_secretsmanager_client.utils import const, common_logger
 
 from aliyun_sdk_secretsmanager_common_plugin.service.default_plugins_credentials_loader import \
     DefaultPluginCredentialsLoader
 from aliyun_sdk_secretsmanager_common_plugin.utils import consts, credentials_utils
+from aliyun_sdk_secretsmanager_common_plugin.utils.consts import SECRETSMANAGER_PLUGIN_PYTHON_OF_USER_AGENT, \
+    PROJECT_VERSION, SECRETSMANAGER_PLUGIN_PYTHON_OF_USER_AGENT_PRIORITY
 
 
 class AliyunSdkSecretsManagerPluginsManager:
@@ -109,6 +112,8 @@ class AliyunSdkSecretsManagerPluginsManager:
                 self.check_secretsmanager_plugin_credentials_provider()
             else:
                 self.__secretsmanager_plugin_credentials_provider = DefaultPluginCredentialsLoader().load()
+            register_user_agent(SECRETSMANAGER_PLUGIN_PYTHON_OF_USER_AGENT + "/" + PROJECT_VERSION,
+                                SECRETSMANAGER_PLUGIN_PYTHON_OF_USER_AGENT_PRIORITY)
             self.__init_secret_manager_client()
             threading.Thread(target=self.__refresh_secrets).start()
             common_logger.get_logger().info("aliyunSdkSecretsManagerPlugin init success")
