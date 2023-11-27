@@ -18,7 +18,7 @@ setup(
     name="aliyun-sdk-common-managed-credentials-provider",
     packages=find_packages("src"),
     package_dir={"": "src"},
-    version="0.1.3",
+    version="0.1.4",
     license="Apache License 2.0",
     author="Aliyun",
     maintainer="Aliyun",
@@ -27,7 +27,7 @@ setup(
     install_requires=[
         "requests<=2.0.0; python_version=='2.7'",
         "requests>=0.10.1; python_version>='3'",
-        "aliyun-secret-manager-client==0.1.3",
+        "aliyun-secret-manager-client==0.1.4",
     ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
