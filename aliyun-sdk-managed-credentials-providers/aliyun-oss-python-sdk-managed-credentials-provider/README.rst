@@ -104,8 +104,8 @@ credentials.
    endpoint = "******"
    secret_name ="******"
    bucket_name = "******"
-   //custom configuration
-   //ConfigLoader.set_config_name("custom-config")
+   # custom configuration
+   # ConfigLoader.set_config_name("custom-config")
    bucket = ProxyBucket(secret_name=secret_name, endpoint=endpoint, bucket_name=bucket_name)
    objects = bucket.list_objects()
    for b in islice(objects.object_list, 10):
@@ -174,8 +174,8 @@ use it to call aliyun services.
    endpoint = "******"
    secret_name ="******"
    bucket_name = "******"
-   //custom configuration
-   //ConfigLoader.set_config_name("custom-config")
+   # custom configuration
+   # ConfigLoader.set_config_name("custom-config")
    bucket = ProxyBucket(secret_name=secret_name, endpoint=endpoint, bucket_name=bucket_name,ak_expire_handler=OssAkExpireHandler())
    objects = bucket.list_objects()
    for b in islice(objects.object_list, 10):

@@ -92,8 +92,8 @@ Python2.7.15+ 或 Python3.5+
    endpoint = "******"
    secret_name ="******"
    bucket_name = "******"
-   //自定义配置文件
-   //ConfigLoader.set_config_name("custom-config")
+   # 自定义配置文件
+   # ConfigLoader.set_config_name("custom-config")
    bucket = ProxyBucket(secret_name=secret_name, endpoint=endpoint, bucket_name=bucket_name)
    objects = bucket.list_objects()
    for b in islice(objects.object_list, 10):
@@ -159,8 +159,8 @@ Python2.7.15+ 或 Python3.5+
    endpoint = "******"
    secret_name ="******"
    bucket_name = "******"
-   //自定义配置文件
-   //ConfigLoader.set_config_name("custom-config")
+   # 自定义配置文件
+   # ConfigLoader.set_config_name("custom-config")
    bucket = ProxyBucket(secret_name=secret_name, endpoint=endpoint, bucket_name=bucket_name,ak_expire_handler=OssAkExpireHandler())
    objects = bucket.list_objects()
    for b in islice(objects.object_list, 10):

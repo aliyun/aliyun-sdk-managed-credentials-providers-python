@@ -96,8 +96,8 @@ Python2.7.15+ 或 Python3.5+
 
    region="cn-hangzhou"
    secretName="******"
-   //自定义配置文件
-   //ConfigLoader.set_config_name("custom-config")
+   # 自定义配置文件
+   # ConfigLoader.set_config_name("custom-config")
    # 获取ACSClient
    client = ProxyAcsClient(region_id=region, secret_name=secretName )
 
@@ -158,8 +158,8 @@ Python2.7.15+ 或 Python3.5+
 
    region = "cn-hangzhou"
    secretName = "******"
-   //自定义配置文件
-   //ConfigLoader.set_config_name("custom-config")
+   # 自定义配置文件
+   # ConfigLoader.set_config_name("custom-config")
    # 获取ACSClient
    client = ProxyAcsClient(region_id=region, secret_name=secretName,
                          ak_expire_handler=AliyunSdkAKExpireHandler("InvalidAccessKeyId.NotFound"))
