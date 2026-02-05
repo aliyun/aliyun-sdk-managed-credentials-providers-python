@@ -15,7 +15,7 @@ def read(*args):
 
 
 setup(
-    name="aliyun-openapi-python-sdk-managed-credentials-provider",
+    name="aliyun_openapi_python_sdk_managed_credentials_provider",
     packages=find_packages("src"),
     package_dir={"": "src"},
     version="0.1.5",
@@ -25,7 +25,7 @@ setup(
     description="Managed Credentials Provider for Aliyun Python SDK",
     keywords=["aliyun", "kms", "secretsmanager"],
     install_requires=[
-        'aliyun-sdk-common-managed-credentials-provider==0.1.5'
+        'aliyun_sdk_common_managed_credentials_provider==0.1.5'
     ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",

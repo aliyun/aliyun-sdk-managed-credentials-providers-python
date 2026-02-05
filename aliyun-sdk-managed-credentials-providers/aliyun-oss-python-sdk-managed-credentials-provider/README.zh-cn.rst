@@ -42,7 +42,7 @@ Python2.7.15+ 或 Python3.5+
 
 .. code:: bash
 
-       $ pip install aliyun-oss-python-sdk-managed-credentials-provider
+       $ pip install aliyun_oss_python_sdk_managed_credentials_provider
 
 也可以直接安装解压后的安装包：
 

@@ -65,7 +65,7 @@ Key调用某些云服务API返回的错误代码和上述所列错误码相异�
 
 .. code:: bash
 
-       $ pip install aliyun-openapi-python-sdk-managed-credentials-provider
+       $ pip install aliyun_openapi_python_sdk_managed_credentials_provider
 
 也可以直接安装解压后的安装包：
 

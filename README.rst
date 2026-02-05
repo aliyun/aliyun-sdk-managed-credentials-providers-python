@@ -87,7 +87,7 @@ example):
 
 .. code:: bash
 
-       $ pip install aliyun-openapi-python-sdk-managed-credentials-provider
+       $ pip install aliyun_openapi_python_sdk_managed_credentials_provider
 
 You can also install the unzipped installer package directly:
 

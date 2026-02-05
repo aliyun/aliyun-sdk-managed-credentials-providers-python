@@ -51,7 +51,7 @@ example):
 
 .. code:: bash
 
-       $ pip install aliyun-oss-python-sdk-managed-credentials-provider
+       $ pip install aliyun_oss_python_sdk_managed_credentials_provider
 
 You can also install the unzipped installer package directly:
 

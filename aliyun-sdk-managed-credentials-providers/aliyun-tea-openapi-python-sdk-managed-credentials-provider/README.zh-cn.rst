@@ -46,7 +46,7 @@ Python3.6+
 
 .. code:: bash
 
-   $ pip install aliyun-tea-openapi-python-sdk-managed-credentials-provider
+   $ pip install aliyun_tea_openapi_python_sdk_managed_credentials_provider
 
 也可以直接安装解压后的安装包：
 

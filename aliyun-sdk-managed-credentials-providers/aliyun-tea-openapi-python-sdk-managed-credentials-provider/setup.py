@@ -15,7 +15,7 @@ def read(*args):
 
 
 setup(
-    name="aliyun-tea-openapi-python-sdk-managed-credentials-provider",
+    name="aliyun_tea_openapi_python_sdk_managed_credentials_provider",
     packages=find_packages("src"),
     package_dir={"": "src"},
     version="0.1.5",
@@ -25,7 +25,7 @@ setup(
     description="Managed Credentials Provider for Aliyun Python Tea OpenApi SDK",
     keywords=["aliyun", "kms", "secretsmanager"],
     install_requires=[
-        'aliyun-sdk-common-managed-credentials-provider==0.1.5',
+        'aliyun_sdk_common_managed_credentials_provider==0.1.5',
         'alibabacloud_tea_openapi>=0.1.0'
     ],
     classifiers=[
