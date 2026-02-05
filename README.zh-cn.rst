@@ -65,7 +65,7 @@ Key调用某些云服务API返回的错误代码和上述所列错误码相异�
 
 .. code:: bash
 
-       $ pip install aliyun-openapi-python-sdk-managed-credentials-provider
+       $ pip install aliyun_openapi_python_sdk_managed_credentials_provider
 
 也可以直接安装解压后的安装包：
 
@@ -165,8 +165,8 @@ Key调用某些云服务API返回的错误代码和上述所列错误码相异�
    from aliyun_sdk_secretsmanager_common_plugin.utils.config_loader import ConfigLoader
    region="cn-hangzhou"
    secretName="******"
-   //自定义配置文件
-   //ConfigLoader.set_config_name("custom-config")
+   # 自定义配置文件
+   # ConfigLoader.set_config_name("custom-config")
    # 获取ACSClient
    client = ProxyAcsClient(region_id=region, secret_name=secretName )
 
@@ -227,8 +227,8 @@ Key调用某些云服务API返回的错误代码和上述所列错误码相异�
 
    region = "cn-hangzhou"
    secretName = "******"
-   //自定义配置文件
-   //ConfigLoader.set_config_name("custom-config")
+   # 自定义配置文件
+   # ConfigLoader.set_config_name("custom-config")
    # 获取ACSClient
    client = ProxyAcsClient(region_id=region, secret_name=secretName,
                          ak_expire_handler=AliyunSdkAKExpireHandler("InvalidAccessKeyId.NotFound"))

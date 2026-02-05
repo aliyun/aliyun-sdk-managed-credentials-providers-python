@@ -15,10 +15,10 @@ def read(*args):
 
 
 setup(
-    name="aliyun-sdk-common-managed-credentials-provider",
+    name="aliyun_sdk_common_managed_credentials_provider",
     packages=find_packages("src"),
     package_dir={"": "src"},
-    version="0.1.4",
+    version="0.1.5",
     license="Apache License 2.0",
     author="Aliyun",
     maintainer="Aliyun",
@@ -27,7 +27,7 @@ setup(
     install_requires=[
         "requests<=2.0.0; python_version=='2.7'",
         "requests>=0.10.1; python_version>='3'",
-        "aliyun-secret-manager-client==0.1.4",
+        "aliyun_secret_manager_client==0.1.5",
     ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",

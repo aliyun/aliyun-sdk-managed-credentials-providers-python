@@ -15,17 +15,17 @@ def read(*args):
 
 
 setup(
-    name="aliyun-oss-python-sdk-managed-credentials-provider",
+    name="aliyun_oss_python_sdk_managed_credentials_provider",
     packages=find_packages("src"),
     package_dir={"": "src"},
-    version="0.1.4",
+    version="0.1.5",
     license="Apache License 2.0",
     author="Aliyun",
     maintainer="Aliyun",
     description="Managed Credentials Provider for Aliyun Python SDK OSS",
     keywords=["aliyun", "kms", "oss2"],
     install_requires=[
-        'aliyun-sdk-common-managed-credentials-provider==0.1.4',
+        'aliyun_sdk_common_managed_credentials_provider==0.1.5',
         'oss2>=2.7.0'
     ],
     classifiers=[

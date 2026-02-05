@@ -2,6 +2,7 @@
 import time
 
 from alibaba_cloud_secretsmanager_client.model.secret_info import CacheSecretInfo
+from alibaba_cloud_secretsmanager_client.utils import common_logger
 
 from aliyun_sdk_secretsmanager_common_plugin.model.monitor_message_info import MonitorMessageInfo
 from aliyun_sdk_secretsmanager_common_plugin.service.secretsmanager_plugin_cache_hook import \
@@ -26,7 +27,11 @@ class DefaultSecretsManagerPluginCacheHook(SecretsManagerPluginCacheHook):
             for updater in updater_list:
                 try:
                     updater.update_credential(secret_info)
+                    common_logger.get_logger().info("The secret named [%s] versionId:[%s] update credential success" % (
+                        secret_name, secret_info.version_id))
                 except Exception as e:
+                    common_logger.get_logger().error("The secret named [%s] versionId:[%s] update credential error" % (
+                        secret_name, secret_info.version_id))
                     monitor_message_utils.add_message(self.queue,
                                                       MonitorMessageInfo(consts.UPDATE_CREDENTIAL_ACTION,
                                                                          secret_name,

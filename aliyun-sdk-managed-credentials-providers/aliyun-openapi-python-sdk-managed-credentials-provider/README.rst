@@ -65,7 +65,7 @@ example):
 
 .. code:: bash
 
-       $ pip install aliyun-openapi-python-sdk-managed-credentials-provider
+       $ pip install aliyun_openapi_python_sdk_managed_credentials_provider
 
 You can also install the unzipped installer package directly:
 
@@ -116,8 +116,8 @@ RAM credentials。
 
    region="cn-hangzhou"
    secretName="******"
-   //custom configuration
-   //ConfigLoader.set_config_name("custom-config")
+   # custom configuration
+   # ConfigLoader.set_config_name("custom-config")
    # get an ACSClient
    client = ProxyAcsClient(region_id=region, secret_name=secretName )
 
@@ -182,8 +182,8 @@ use it to call aliyun services.
 
    region = "cn-hangzhou"
    secretName = "******"
-   //custom configuration
-   //ConfigLoader.set_config_name("custom-config")
+   # custom configuration
+   # ConfigLoader.set_config_name("custom-config")
    # get an ACSClient
    # provide the given error codes to obtain the credentials again
    client = ProxyAcsClient(region_id=region, secret_name=secretName,
